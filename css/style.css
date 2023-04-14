@@ -8,7 +8,7 @@
 }
 
 html {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Noto serif', serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
@@ -24,7 +24,12 @@ article {
   display: inline-flex;
   flex-direction: column;
   row-gap: 1.5rem;
-  width: 80%;
+  width: 60%;
+}
+
+article :nth-child(2) {
+  margin: auto;
+  text-align: center;
 }
 
 img {
@@ -37,6 +42,11 @@ h1 {
   font-size: 1.8rem;
   margin-bottom: 0.5rem;
   line-height: 1.2;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  text-align: center;
+  font-weight: 400;
 }
 
 h2 {
@@ -47,4 +57,10 @@ h2 {
 ol, p, ul {
   line-height: 1.7;
   font-size: 0.8rem;
+}
+
+@media print {
+  article {
+    width: 80%;
+  }
 }
