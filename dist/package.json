@@ -1,0 +1,8 @@
+{
+	"dependencies": {
+		"puppeteer": "^19.9.0",
+		"puppeteer-core": "^19.9.0",
+		"puppeteer-html-pdf": "^2.0.7",
+		"puppeteer-report": "^3.1.0"
+	}
+}
