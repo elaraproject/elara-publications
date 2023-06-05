@@ -8,7 +8,7 @@ Black hole superradiance reactors utilize the phenomenon of superradiant scatter
 
 ## Introduction
 
-Human advancement has gone hand-in-hand with the discovery of new energy sources: from coal, to petroleum, to nuclear fission, and most recently, to renewable sources of energy. Black holes are an untapped energy source, capable of augmenting, and perhaps one day replacing, traditional energy sources.
+Human advancement has gone hand-in-hand with the discovery of new energy sources: from coal, to petroleum, to nuclear fission, and most recently, to renewable sources of energy. Black holes are an untapped energy source. As up to 29% of the rotational mass-energy of a black hole may be extracted [1], the highest of any energy source other than antimatter, black hole reactors may certainly augument, and perhaps one day replace, traditional energy sources.
 
 Due to the effect of frame-dragging predicted through General Relativity, rotating bodies drag spacetime with them, causing objects in the immediate vicinity to co-rotate with the rotating body. Rotating black holes, described by the Kerr metric, contain a region where the effect of frame-dragging is sufficient that even light must co-rotate with the black hole. Such a region is known as the ergosphere, and it is this feature which allows for the possibility of energy extraction from black holes.
 
@@ -16,7 +16,7 @@ This research is centered on black hole energy generation through utilizing the 
 
 ## Computational simulation
 
-A black hole superradiance raytracer was created to simulate the effects of superradiant scattering within an icospherical cavity. A model of the cavity of approximately 2m diameter was first created. The black hole simulated had a Schwarzschild radius of approximately $1.78 \times 10^{-18}$ meters, a mass of $1.2 \times 10^9$ kilograms, and a lifetime of 5,000 years.
+A black hole superradiance raytracer was created to simulate the effects of superradiant scattering within an icospherical cavity. A model of the cavity of approximately 2m diameter was first created. The black hole simulated was a 1 solar mass black hole, with a the reactor cavity 100 meters wider than its ergosphere, with a radius of approximately 3064 m.
 
 The basic operation of the raytracer is as follows: it shoots a single ray, then records the trajectory traced by the ray as it travels along a Kerr geodesic along the black hole. After each bounce, it records the last known trajectory of the light ray, and continues tracing the ray given its new velocity vector computed after the reflection.
 
@@ -26,7 +26,7 @@ $$
 \frac{d}{dt} \begin{bmatrix} \dot x^\mu \\ \ddot x^\mu \end{bmatrix}= \begin{bmatrix} {\dot x}^\mu \\ -{\Gamma^\mu}_{\alpha \beta} \dot x^\alpha \dot x^\beta \end{bmatrix}
 $$
 
-Where the Kerr metric is given by [1]:
+Where the Kerr metric is given by [2]:
 
 $$
 ds^2 = -\left(1 - \frac{2 M r}{\Sigma}\right) dt^2 + \frac{\Sigma}{\Delta} dr^2 + \Sigma d\theta^2 + \left(r^2 + a^2 + \frac{2 M r a^2}{\Sigma} \sin^2 \theta \right) \sin^2 \theta d\phi^2 - \frac{2 M r a sin^2 \theta}{\Sigma} dt d\phi
@@ -115,17 +115,11 @@ $$
 Then, the angles can be found in 2D using the 2D projections of the 3D incoming and normal vectors:
 
 $$
-\theta_y = \operatorname{angle} \left(\vec a_y, \vec N_y\right)
+\theta_y = \frac{a_y \cdot N_y}{\|a_y\| \|N_y\|}
 $$
 
 $$
-\theta_x = \operatorname{angle} \left(\vec a_x, \vec N_x\right)
-$$
-
-where the angle function finds the angle $\theta$ between two vectors via:
-
-$$
-\theta = \frac{\vec a \cdot \vec b}{||a|| ||b||}
+\theta_x = \frac{a_x \cdot N_x}{\|a_x\| \|N_x\|}
 $$
 
 The 2D projections of the outgoing vector $\vec b$ can be found by applying the rotation matrix $R(\theta)$ to the flipped 2D normal projection vector: 
@@ -168,8 +162,10 @@ Some notable issues that were possibly present in the research include a low sam
 
 ## Concluding remarks
 
-In this research, it is shown that, consistent with theoretical predictions, the superradiant scattering of light around a Kerr black hole causes a near-exponential increase in the energy of the light ray. This simulation of a 1.2 billion mass black hole, to be supplemented by further research, represents a first step in demonstrating the feasibility of a construction of an actual black hole superradiance reactor.
+In this research, it is shown that, consistent with theoretical predictions, the superradiant scattering of light around a Kerr black hole causes an increase in the energy of the light ray. This simulation of a solar mass black hole, to be supplemented by further research, represents a first step in demonstrating the feasibility of a construction of an actual black hole superradiance reactor.
 
 ## Bibliography
 
-[1]: Rezzolla, Luciano; Zanotti, Olindo (2013). [*Relativistic Hydrodynamics*](https://books.google.com/books?id=aS1oAgAAQBAJ&pg=PA57). Oxford University Press. pp. 55--57 [eqns. 1.249 to 1.265]. [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) "ISBN (identifier)") [978-0-19-852890-6](https://en.wikipedia.org/wiki/Special:BookSources/978-0-19-852890-6 "Special:BookSources/978-0-19-852890-6").
+[1]: East, W. E., & Pretorius, F. (2017). Superradiant instability and backreaction of massive vector fields around Kerr black holes. *Physical review letters*, *119*(4), 041101.
+
+[2]: Rezzolla, Luciano; Zanotti, Olindo (2013). [*Relativistic Hydrodynamics*](https://books.google.com/books?id=aS1oAgAAQBAJ&pg=PA57). Oxford University Press. pp. 55--57 [eqns. 1.249 to 1.265]. [ISBN](https://en.wikipedia.org/wiki/ISBN_(identifier) "ISBN (identifier)") [978-0-19-852890-6](https://en.wikipedia.org/wiki/Special:BookSources/978-0-19-852890-6 "Special:BookSources/978-0-19-852890-6").

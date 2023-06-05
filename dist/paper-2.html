@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Conducting simulations into the energy generation possibilities of black hole superradiance reactors</title>
-        <meta name="author" content="Yuxuan Song" />
+        <title>Default title</title>
+        <meta name="author" content="Yuxuan Song" //>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/open-sans.min.css">
         <!--Stylesheet-->
         <link rel="stylesheet" href="../css/style.css">
@@ -23,17 +23,17 @@
 <h2>Abstract</h2>
 <p>Black hole superradiance reactors utilize the phenomenon of superradiant scattering as a means to extract energy out of rotating black holes. In this paper, a computational simulation of such a reactor is discussed, implemented, and analyzed.</p>
 <h2>Introduction</h2>
-<p>Human advancement has gone hand-in-hand with the discovery of new energy sources: from coal, to petroleum, to nuclear fission, and most recently, to renewable sources of energy. Black holes are an untapped energy source, capable of augmenting, and perhaps one day replacing, traditional energy sources.</p>
+<p>Human advancement has gone hand-in-hand with the discovery of new energy sources: from coal, to petroleum, to nuclear fission, and most recently, to renewable sources of energy. Black holes are an untapped energy source. As up to 29% of the rotational mass-energy of a black hole may be extracted [1], the highest of any energy source other than antimatter, black hole reactors may certainly augument, and perhaps one day replace, traditional energy sources.</p>
 <p>Due to the effect of frame-dragging predicted through General Relativity, rotating bodies drag spacetime with them, causing objects in the immediate vicinity to co-rotate with the rotating body. Rotating black holes, described by the Kerr metric, contain a region where the effect of frame-dragging is sufficient that even light must co-rotate with the black hole. Such a region is known as the ergosphere, and it is this feature which allows for the possibility of energy extraction from black holes.</p>
 <p>This research is centered on black hole energy generation through utilizing the superradiance effect, where light trapped around a rotating black hole would be amplified in the black hole's ergosphere. A reflective cavity enclosing the black hole would cause exponential amplification, and an outlet in the cavity would produce a concentrated super-high-energy beam, capable of then being distributed.  Such reactors would also require the creation and manipulation of artificial kugelblitz black holes, generated from extreme concentrations of energy. Currently, superradiant scattering is poorly understood; it is hoped that with computer simulations of superradiance reactors, insights may be gained into the phenomenon, and we may be one step closer to realizing black hole energy generation.</p>
 <h2>Computational simulation</h2>
-<p>A black hole superradiance raytracer was created to simulate the effects of superradiant scattering within an icospherical cavity. A model of the cavity of approximately 2m diameter was first created. The black hole simulated had a Schwarzschild radius of approximately $1.78 \times 10^{-18}$ meters, a mass of $1.2 \times 10^9$ kilograms, and a lifetime of 5,000 years.</p>
+<p>A black hole superradiance raytracer was created to simulate the effects of superradiant scattering within an icospherical cavity. A model of the cavity of approximately 2m diameter was first created. The black hole simulated was a 1 solar mass black hole, with a the reactor cavity 100 meters wider than its ergosphere, with a radius of approximately 3064 m.</p>
 <p>The basic operation of the raytracer is as follows: it shoots a single ray, then records the trajectory traced by the ray as it travels along a Kerr geodesic along the black hole. After each bounce, it records the last known trajectory of the light ray, and continues tracing the ray given its new velocity vector computed after the reflection.</p>
 <p>To record the trajectory of the ray, the raytracer uses a Runge-Kutta 4th order solver. The solver computes the geodesic by computing the derivative at each point:</p>
 <p>$$
 \frac{d}{dt} \begin{bmatrix} \dot x^\mu \\ \ddot x^\mu \end{bmatrix}= \begin{bmatrix} {\dot x}^\mu \\ -{\Gamma^\mu}_{\alpha \beta} \dot x^\alpha \dot x^\beta \end{bmatrix}
 $$</p>
-<p>Where the Kerr metric is given by [1]:</p>
+<p>Where the Kerr metric is given by [2]:</p>
 <p>$$
 ds^2 = -\left(1 - \frac{2 M r}{\Sigma}\right) dt^2 + \frac{\Sigma}{\Delta} dr^2 + \Sigma d\theta^2 + \left(r^2 + a^2 + \frac{2 M r a^2}{\Sigma} \sin^2 \theta \right) \sin^2 \theta d\phi^2 - \frac{2 M r a sin^2 \theta}{\Sigma} dt d\phi
 $$</p>
@@ -43,8 +43,12 @@ $$</p>
 $$</p>
 <p>The initial conditions of the raytracer were obtained by setting the origin of the light rays to be a point just inside the reflective cavity at its very top, and setting the following velocities:</p>
 <p>$$
-v_r = c \\
-v_\theta = \theta_0 \\
+v_r = c
+$$</p>
+<p>$$
+v_\theta = \theta_0
+$$</p>
+<p>$$
 v_\phi = \phi_0
 $$</p>
 <p>Conversions between spherical and cartesian velocities were obtained using the following relations:</p>
@@ -97,14 +101,10 @@ N.z
 $$</p>
 <p>Then, the angles can be found in 2D using the 2D projections of the 3D incoming and normal vectors:</p>
 <p>$$
-\theta_y = \operatorname{angle} \left(\vec a_y, \vec N_y\right)
+\theta_y = \frac{a_y \cdot N_y}{|a_y| |N_y|}
 $$</p>
 <p>$$
-\theta_x = \operatorname{angle} \left(\vec a_x, \vec N_x\right)
-$$</p>
-<p>where the angle function finds the angle $\theta$ between two vectors via:</p>
-<p>$$
-\theta = \frac{\vec a \cdot \vec b}{||a|| ||b||}
+\theta_x = \frac{a_x \cdot N_x}{|a_x| |N_x|}
 $$</p>
 <p>The 2D projections of the outgoing vector $\vec b$ can be found by applying the rotation matrix $R(\theta)$ to the flipped 2D normal projection vector:</p>
 <p>$$
@@ -122,19 +122,20 @@ c_y.z
 \end{bmatrix}
 $$</p>
 <p>After 150 bounces, the points of reflection were obtained as follows:</p>
-<p><img src="./images/points_of_reflection.png" alt="Reflection points" /></p>
+<p><img src="./images/points_of_reflection.png" alt="Reflection points" //></p>
 <p>The energy of the light ray was also found by taking the path integral of the frequency along its trajectory:</p>
 <p>$$
 E = h \int_C \frac{Mrac}{\pi \Sigma^2} \cdot ds
 $$</p>
 <p>Through numerical evaluation of the line integral, a plot of the energy of the light ray was created:</p>
-<p><img src="./images/energy_increase_reactor.png" alt="Light ray energy" /></p>
+<p><img src="./images/energy_increase_reactor.png" alt="Light ray energy" //></p>
 <h2>Critical evaluation of results</h2>
 <p>Some notable issues that were possibly present in the research include a low sample count for reflections, a high error tolerance for determining point-surface intersection, and division-by-zero errors encountered due to limited precision. They may be addressed in future research.</p>
 <h2>Concluding remarks</h2>
-<p>In this research, it is shown that, consistent with theoretical predictions, the superradiant scattering of light around a Kerr black hole causes a near-exponential increase in the energy of the light ray. This simulation of a 1.2 billion mass black hole, to be supplemented by further research, represents a first step in demonstrating the feasibility of a construction of an actual black hole superradiance reactor.</p>
+<p>In this research, it is shown that, consistent with theoretical predictions, the superradiant scattering of light around a Kerr black hole causes an increase in the energy of the light ray. This simulation of a solar mass black hole, to be supplemented by further research, represents a first step in demonstrating the feasibility of a construction of an actual black hole superradiance reactor.</p>
 <h2>Bibliography</h2>
-<p>[1]: Rezzolla, Luciano; Zanotti, Olindo (2013). <a href="https://books.google.com/books?id=aS1oAgAAQBAJ&amp;pg=PA57"><em>Relativistic Hydrodynamics</em></a>. Oxford University Press. pp. 55--57 [eqns. 1.249 to 1.265]. <a href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="https://en.wikipedia.org/wiki/Special:BookSources/978-0-19-852890-6" title="Special:BookSources/978-0-19-852890-6">978-0-19-852890-6</a>.</p>
+<p>[1]: East, W. E., &amp; Pretorius, F. (2017). Superradiant instability and backreaction of massive vector fields around Kerr black holes. <em>Physical review letters</em>, <em>119</em>(4), 041101.</p>
+<p>[2]: Rezzolla, Luciano; Zanotti, Olindo (2013). <a href="https://books.google.com/books?id=aS1oAgAAQBAJ&amp;pg=PA57"><em>Relativistic Hydrodynamics</em></a>. Oxford University Press. pp. 55--57 [eqns. 1.249 to 1.265]. <a href="https://en.wikipedia.org/wiki/ISBN_(identifier)" title="ISBN (identifier)">ISBN</a> <a href="https://en.wikipedia.org/wiki/Special:BookSources/978-0-19-852890-6" title="Special:BookSources/978-0-19-852890-6">978-0-19-852890-6</a>.</p>
 
     </article>
     <!--KaTeX auto-render extension setup-->
