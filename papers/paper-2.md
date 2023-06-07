@@ -78,69 +78,13 @@ $$
 v_z = \cos \theta r' - r \sin \theta \theta'
 $$
 
-And finally, after each bounce, the $v_\theta$ and $v_\phi$ components of the new velocity vector were found using a projection matrix after vector decomposition. This is done by decomposing the 3D incoming vector $\vec a$ and normal vector $\vec N$ into two 2D vectors in the $y = 0$ and $x = 0$ plane. This is done by respectively setting $y = 0$ for $\vec a_y$ to get the projection of the vector in the plane $y = 0$, and setting $x = 0$ for $\vec a_x$ to get the projection of the vector in the plane $x = 0$, and doing the same for the normal vector:
+And finally, after each bounce, the $v_\theta$ and $v_\phi$ components of the new velocity vector were found with:
 
 $$
-\vec a_y = 
-\begin{bmatrix}
-a.x \\
-a.z
-\end{bmatrix}
+\vec v_o = \vec v_i - \frac{2 \vec v_i \cdot \vec N}{\vec N \cdot \vec N}\vec N
 $$
 
-$$
-\vec a_x = 
-\begin{bmatrix}
-a.y \\
-a.z
-\end{bmatrix}
-$$
-
-$$
-\vec N_y = 
-\begin{bmatrix}
-N.x \\
-N.z
-\end{bmatrix}
-$$
-
-$$
-\vec N_x = 
-\begin{bmatrix}
-N.y \\
-N.z
-\end{bmatrix}
-$$
-
-Then, the angles can be found in 2D using the 2D projections of the 3D incoming and normal vectors:
-
-$$
-\theta_y = \frac{a_y \cdot N_y}{\|a_y\| \|N_y\|}
-$$
-
-$$
-\theta_x = \frac{a_x \cdot N_x}{\|a_x\| \|N_x\|}
-$$
-
-The 2D projections of the outgoing vector $\vec b$ can be found by applying the rotation matrix $R(\theta)$ to the flipped 2D normal projection vector: 
-
-$$
-\vec b_y = R(\theta_y) \times (-\vec N_y)
-$$
-
-$$
-\vec b_x = R(\theta_x) \times (-\vec N_x)
-$$
-
-From which the final outgoing vector $\vec b$ can be found:
-
-$$
-\vec b = \begin{bmatrix}
-c_y.x \\
-c_x.x \\
-c_y.z
-\end{bmatrix}
-$$
+where $\vec v_i$ is the incoming light ray velocity vector, $\vec v_o$ is the reflected light ray velocity vector, and $\vec N$ is the normal vector.
 
 After 150 bounces, the points of reflection were obtained as follows:
 
