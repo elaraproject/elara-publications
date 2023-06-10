@@ -90,6 +90,8 @@ After 150 bounces, the points of reflection were obtained as follows:
 
 ![Reflection points](./images/points_of_reflection.png)
 
+_Note: the reflection points were truncated to the first 50 due to graph overcrowding_
+
 The energy of the light ray was also found by taking the path integral of the frequency along its trajectory:
 
 $$
