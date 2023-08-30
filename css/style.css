@@ -13,7 +13,37 @@ html {
   text-rendering: optimizeLegibility;
 }
 
+/* Fonts */
+@font-face {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: 400;
+  src: url("PT_Serif/PTSerif-Regular.ttf")
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: italic;
+  font-weight: 400;
+  src: url("PTSerif-Italic.ttf");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: normal;
+  font-weight: bold;
+  src: url("PTSerif-Bold.ttf");
+}
+
+@font-face {
+  font-family: "PT Serif";
+  font-style: italic;
+  font-weight: bold;
+  src: url("PTSerif-BoldItalic.ttf");
+}
+
 body {
+  font-family: "PT Serif", serif;
   display: flex;
   width: 100%;
   height: 100%;
