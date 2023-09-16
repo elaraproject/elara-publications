@@ -1,6 +1,6 @@
 # On the machine-learning assisted optimization of Alcubierre-like spacetime metrics
 
-Yuxuan Song
+The Project Elära contributors
 
 ## Abstract
 

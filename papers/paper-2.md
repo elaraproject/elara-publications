@@ -1,6 +1,6 @@
 # Conducting simulations into the energy generation possibilities of black hole superradiance reactors
 
-Yuxuan Song
+The Project Elära contributors
 
 ## Abstract
 

@@ -1,6 +1,6 @@
 # A novel technique for space-based energy generation
 
-Yuxuan Song and Kingsley Krivonozka
+The Project Elära contributors
 
 ## Abstract
 
