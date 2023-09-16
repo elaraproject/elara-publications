@@ -30,8 +30,9 @@ def main():
     return 1
   info(f"Processing {str(input_path)}")
   markdown = input_path.read_text()
+  title = markdown.split("\n")[0][2:]
   html = mistune.html(markdown)
-  output_html = HTML_TEMPLATE.format(html)
+  output_html = HTML_TEMPLATE.format(title, html)
   output_path = Path(str(input_path.with_suffix(".html")).replace("papers", "dist"))
   info(f"Writing to {str(output_path)}")
   output_path.write_text(output_html)
