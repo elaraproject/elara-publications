@@ -25,21 +25,21 @@ html {
   font-family: "PT Serif";
   font-style: italic;
   font-weight: 400;
-  src: url("PTSerif-Italic.ttf");
+  src: url("PT_Serif/PTSerif-Italic.ttf");
 }
 
 @font-face {
   font-family: "PT Serif";
   font-style: normal;
   font-weight: bold;
-  src: url("PTSerif-Bold.ttf");
+  src: url("PT_Serif/PTSerif-Bold.ttf");
 }
 
 @font-face {
   font-family: "PT Serif";
   font-style: italic;
   font-weight: bold;
-  src: url("PTSerif-BoldItalic.ttf");
+  src: url("PT_Serif/PTSerif-BoldItalic.ttf");
 }
 
 body {
@@ -84,9 +84,20 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-ol, p, ul {
+ol, p, ul, td, th {
   line-height: 1.7;
   font-size: 0.8rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%
+}
+
+td, th {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: left;
+  padding: 0.5rem;
 }
 
 @media print {
