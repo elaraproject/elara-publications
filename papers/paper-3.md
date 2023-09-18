@@ -1,6 +1,6 @@
 # A novel technique for space-based energy generation
 
-The Project Elära contributors
+Kingsley Krivonozka and the Project Elära contributors
 
 ## Abstract
 
