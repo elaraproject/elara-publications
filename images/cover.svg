@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="cover.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.47779909"
+     inkscape:cx="534.74359"
+     inkscape:cy="534.74359"
+     inkscape:window-width="1440"
+     inkscape:window-height="839"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#008066;stroke:none;stroke-width:0.793999;stroke-dasharray:0.793999, 0.793999"
+       id="rect8042"
+       width="210"
+       height="297"
+       x="0"
+       y="0"
+       ry="0" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.57191px;line-height:1.5;white-space:pre;inline-size:114.283;display:inline;fill:#ffffff;stroke:none;stroke-width:1.14334;stroke-dasharray:1.14334, 1.14334"
+       x="49.76432"
+       y="57.027584"
+       id="text3004"
+       transform="matrix(1.4761269,0,0,1.4761269,-44.067533,-8.9329669)"><tspan
+         x="49.76432"
+         y="57.027584"
+         id="tspan8966"><tspan
+           style="font-weight:bold;font-family:'Open Sans';-inkscape-font-specification:'Open Sans'"
+           id="tspan8964">Project Elära: A novel technique for space-based </tspan></tspan><tspan
+         x="49.76432"
+         y="63.891316"
+         id="tspan8970"><tspan
+           style="font-weight:bold;font-family:'Open Sans';-inkscape-font-specification:'Open Sans'"
+           id="tspan8968">energy generation</tspan></tspan></text>
+    <path
+       style="fill:#55ffdd;stroke:none;stroke-width:0.793999;stroke-dasharray:0.793999, 0.793999"
+       d="M 0,297 82.466989,214.53301 0,186.79139 Z"
+       id="path5554" />
+    <path
+       style="fill:#00d4aa;stroke:none;stroke-width:0.793999;stroke-dasharray:0.793999, 0.793999"
+       d="M 0,297 82.466989,214.53301 210,260.54823 V 297 Z"
+       id="path7071" />
+    <path
+       style="fill:#00aa88;stroke:none;stroke-width:0.793999;stroke-dasharray:0.793999, 0.793999"
+       d="M 210,260.54823 82.466989,214.53301 210,86.999997 Z"
+       id="path7262" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.57191px;line-height:1.5;white-space:pre;inline-size:114.283;display:inline;fill:#ffffff;stroke:none;stroke-width:1.14334;stroke-dasharray:1.14334, 1.14334"
+       x="49.76432"
+       y="57.027584"
+       id="text8892"
+       transform="matrix(1.3308335,0,0,1.3308335,-36.8372,26.733824)"><tspan
+         x="49.76432"
+         y="57.027584"
+         id="tspan8974"><tspan
+           style="font-family:'Open Sans';-inkscape-font-specification:'Open Sans'"
+           id="tspan8972">The Project Elara Contributors</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.57191px;line-height:1.5;white-space:pre;inline-size:114.283;display:inline;fill:#ffffff;stroke:none;stroke-width:1.14334;stroke-dasharray:1.14334, 1.14334"
+       x="49.76432"
+       y="57.027584"
+       id="text8948"
+       transform="matrix(1.3308335,0,0,1.3308335,-36.8372,41.453557)"><tspan
+         x="49.76432"
+         y="57.027584"
+         id="tspan8978"><tspan
+           style="font-family:'Open Sans';-inkscape-font-specification:'Open Sans'"
+           id="tspan8976">2023-05-21</tspan></tspan></text>
+  </g>
+</svg>
